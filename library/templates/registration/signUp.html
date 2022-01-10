@@ -1,0 +1,31 @@
+{% extends 'registration/reg_base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<style>
+    li{
+        display:none;
+    }
+</style>
+
+<div class="signup" style="font-size: small;">
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-6 jumbotron">
+            <h4><b>Create user account</b></h4>
+            <hr>
+            <form action="" method="post" class="form-group">
+                {% csrf_token %}
+                {{form|crispy}}
+                <button class="btn btn-primary btn-block" type="submit">Sign Up</button>
+
+                <br>
+                <p>By signing up, you agree to our <strong><em>terms, data and privacy policies</em></strong></p>
+                <p>Already have an account?<a href="/login">Login</a></p>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
