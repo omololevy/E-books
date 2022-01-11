@@ -8,10 +8,8 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     title = "Neighbourhood"
     user = Profile.objects.get(user=request.user.id)
-    # business = Business.objects.all().filter(hood=user.hood)
     context = {
         "title": title,
-        # "business": business
     }
     return render(request, 'index.html', context)
 
@@ -39,7 +37,7 @@ def create_profile(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
-            return redirect('/profile/')
+            return redirect('/')
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
