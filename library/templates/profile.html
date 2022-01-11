@@ -10,7 +10,7 @@
             <br><br>
             <h4 class="text-muted">~~{{user.username|capfirst}}~~</h4>
             <p>Bio: <b>{{user.profile.bio}}</b></p>
-            <p>Contacts: <b>{{user.profile.contacts}}</b></p>
+            <p class="text-info" style="font-size: 16px; font-weight: bold;"><b>{{user.email}}</b></p>
             <p>Joined: <b>{{user.profile.join_date|timesince}} ago</b></p>
             <a class="btn btn-dark" href="{% url 'create_profile' %}"><b>Update Profile</b></a>
 
