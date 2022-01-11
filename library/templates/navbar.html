@@ -26,16 +26,12 @@
     </ul>
     <ul class="navbar-nav ml-auto nav-flex-icons">
       {%if user.is_authenticated%}
-      <li class="nav-item">
-        <a class="nav-link waves-effect waves-light" href="/profile/">
-          {{user.username|capfirst}}
-        </a>
-      </li>
+     
       {% else %}
       <li class="nav-item dropdown">
         <a class="nav-link waves-effect waves-light dropdown-toggle" id="navbarDropdownMenuLink-333"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-sign-in-alt" style="font-size:26px;"></i>
+          <i class="fas fa-sign-in-alt"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
           <a class="dropdown-item" href="/register/"><b>Sign-up</b></a>
@@ -51,10 +47,10 @@
         {%if user.is_authenticated%}
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
-          <i class="fas fa-user" style="font-size:28px;"></i>
+          <i class="fas fa-user" style="font-size:20px;"><b> {{user.username|capfirst}}</b></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-          <a class="dropdown-item" href="{%url 'create_profile'%}">Profile</a>
+          <a class="dropdown-item" href="{%url 'profile'%}">Profile</a>
           <a class="dropdown-item" href="/admin">Admin</a>
           <a class="dropdown-item" href="/password_change/">Change password</a>
           <a class="dropdown-item" href="/logout/">Logout</a>
