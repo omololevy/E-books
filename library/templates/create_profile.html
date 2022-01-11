@@ -95,15 +95,15 @@
 
 <div class="container-fluid mb-0 d-flex justify-content-center">
     <div class="row">
-        <div class="col-md-10 d-flex justify-content-center">
-            <h1> <strong>
+        <div class="col-md-10 ">
+            <h3> <strong>
                     <a href="" class="typewrite" data-period="2000" data-type='[ "Hello, {{user.username|capfirst}}.",
                         "Welcome to E-library.",
                         "Update your profile."]'>
                         <span class="wrap"></span>
                     </a>
                 </strong>
-            </h1>
+            </h3>
 
             <form action="{% url 'create_profile' %}" class="form-group mt-1" method="post"
                 enctype="multipart/form-data">
