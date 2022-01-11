@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{% block content %}
+<style>
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 mb-3 mt-3">
+            <div class="card">
+                <div class="card-title">
+                    <img src="{{user.profile.image.url}}" width="100%" height="300px" class="img-responsive"
+                        alt="profile">
+                </div>
+                <div class="card-footer">
+                    <h4 class="text-muted">~~{{user.username|capfirst}}~~</h4>
+                    <p>Bio: <b>{{user.profile.bio}}</b></p>
+                    <p>Contacts: <b>{{user.profile.contacts}}</b></p>
+                    <p>Joined: <b>{{user.profile.join_date|timesince}} ago</b></p>
+                </div>
+            </div>
+        </div>
+        
+{% endblock %}

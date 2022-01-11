@@ -153,9 +153,6 @@ cloudinary.config(
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = "/create_profile/"
-
-LOGIN_URL = 'login'
-
 LOGOUT_REDIRECT_URL = "/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
