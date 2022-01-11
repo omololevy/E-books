@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container">
+    {% if businesses %}
+    <h5>Found <b>{{ businesses|length }}</b> books of searched term <b>{{ message }}</b></h5>
+    {% else %}
+    <h4>Found <b> 0</b> enterprises of searched term <b>{{ message }}</b></h4>
+    {% endif %}
+    <div class="row">
+        {% if businesses %}
+        {% for biz in businesses %}
+        <div class="col-md-4">
+            <div class="card card-default">
+                <div class="card-header">
+                    <h5><b>{{biz.user}}</b></h5>
+                </div>
+                <div class="card-title">
+                    <img src="{{biz.image.url}}" width="100%" class="img-responsive" alt="searched image">
+                </div>
+                <div class="card-footer">
+                        <br>Joined: <b>{{biz.create_date|timesince}}</b>
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <h4>There are no posts for this enterprises.</h4>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
