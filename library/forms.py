@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
+from django.db.models import fields
 from .models import *
 
 
@@ -31,3 +32,7 @@ class SubscribeForm(forms.ModelForm):
         model = SubscriptionRecipients
         fields = ["name", "email", "your_address", "phone", "age"]
 
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Book
+        fields = ["author", "description", "cover", "subject", "title"]

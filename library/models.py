@@ -20,4 +20,21 @@ class SubscriptionRecipients(models.Model):
     your_address = models.CharField(max_length=30)
     phone = models.CharField(max_length=30)
     age = models.CharField(max_length=30)
+class Tag(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+class Book(models.Model):
+    author = models.CharField(max_length=50, blank=True)
+    description = models.CharField(max_length=100, blank=True)
+    cover = CloudinaryField('image')
+    subject = models.CharField(max_length=50, blank=True)
+    title = models.CharField(max_length=50, blank=True)
+    tags = models.ManyToManyField(Tag, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='post',null=True)
+
+    def __str__(self):
+        return self.author
 
