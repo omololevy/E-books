@@ -69,6 +69,28 @@ def search_results(request):
         message = "Search for a business by its name"
         return render(request, 'search.html', {"message": message})
 
+def post_book(request):
+    if request.method == "POST":
+        print(request.POST)
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save()
+        return redirect('/')
+    else:
+        form = PostForm()
+
+    try:
+        posts = Book.objects.all().order_by("-pk")
+
+    except Book.DoesNotExist:
+        posts = None
+   
+
+    return render(request, 'post.html', {"form": form, "posts":posts})
+
+
 
 
 

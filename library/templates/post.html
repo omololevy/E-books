@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-2"></div><br><br>
+<div class="card-columns">
+    {% for book in posts %}
+    <div class="card">
+        <!-- Image trigger modal -->
+        <img src="{{book.cover.url}}" height="300vh" class="card-img-top img-responsive" data-toggle="modal"
+            data-target="#im{{image.id}}" alt="{{book.author}}">
+
+        <!-- Modal -->
+        <div class="modal fade" id="im{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-center" id="exampleModalLabel">{{book.author}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <img src="{{book.cover.url}}" class="card-img-top" alt="{{image.image_name}}">
+                    </div>
+                    <div class="modal-body">
+                        <h5>{{book.description}}</h5>
+                        <p class="text-muted">
+                            Category: ~{{book.subject}}~</p>
+                            <!-- <p><br>Location: ~{{image.image_location}}</p> -->
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <input class="form-control input-lg" type="text" value="{{image.image.url}}"
+                            id="{{image.id}}.url">
+                        <button class="btn btn-success" onclick="copyLink('{{image.id}}.url')">link</button> -->
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    {% endfor %}
+
+</div>
+</div>
+{% endblock %}

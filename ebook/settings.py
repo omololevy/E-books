@@ -1,7 +1,7 @@
 import os
 
 
-import django_heroku
+import django_on_heroku
 from pathlib import Path
 from decouple import config
 import dj_database_url
@@ -156,5 +156,5 @@ LOGIN_REDIRECT_URL = "/create_profile/"
 LOGOUT_REDIRECT_URL = "/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
 
