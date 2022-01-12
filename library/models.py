@@ -23,7 +23,7 @@ class Tag(models.Model):
 class Book(models.Model):
     author = models.CharField(max_length=50, blank=True)
     description = models.CharField(max_length=100, blank=True)
-    cover = CloudinaryField('image',blank=True)
+    cover = CloudinaryField('image')
     subject = models.CharField(max_length=50, blank=True)
     title = models.CharField(max_length=50, blank=True)
     tags = models.ManyToManyField(Tag, null=True, blank=True)
