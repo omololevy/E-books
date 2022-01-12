@@ -1,3 +1,7 @@
+{% load static %}
+{% load bootstrap4 %}
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,6 +15,8 @@
     <title>Document</title>
     {%endif%}
     {% block styles %}
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -19,6 +25,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Srisakdi&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+
     {% endblock %}
 </head>
 
@@ -27,6 +38,10 @@
     {% block content %}
     {% endblock %}
     {% block scripts %}
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js">
+    </script>
     <!-- JQuery -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
