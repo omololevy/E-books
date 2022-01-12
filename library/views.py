@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .forms import *
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, Http404,HttpResponseRedirect
+from .email import send_welcome_email
 
 
 # Create your views here.
@@ -12,6 +14,25 @@ def index(request):
         "title": title,
     }
     return render(request, 'index.html', context)
+    
+def subscription(request):
+    if request.method == 'POST':
+        form = SubscribeForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            your_address = form.cleaned_data['your_address']
+            phone = form.cleaned_data['phone']
+            age = form.cleaned_data['age']
+            recipient = SubscriptionRecipients(name = name,email =email,your_address=your_address, phone=phone, age=age)
+            recipient.save()
+            send_welcome_email(name,email)
+            
+            HttpResponseRedirect('/')
+    else:
+        form = SubscribeForm()
+    return render(request, 'subscribe.html', {"form":form})
+
 
 
 def register(request):

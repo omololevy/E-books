@@ -13,3 +13,11 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+
+class SubscriptionRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()
+    your_address = models.CharField(max_length=30)
+    phone = models.CharField(max_length=30)
+    age = models.CharField(max_length=30)
+
