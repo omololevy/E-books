@@ -53,7 +53,7 @@ def profile(request):
     }
     return render(request, 'profile.html', context)
 
-
+@login_required(login_url='/login')
 def search_results(request):
     if 'businesses' in request.GET and request.GET["businesses"]:
         search_term = request.GET.get('businesses')
@@ -69,7 +69,26 @@ def search_results(request):
         message = "Search for a business by its name"
         return render(request, 'search.html', {"message": message})
 
+@login_required(login_url='/login')
+def post_book(request):
 
+    posts = Book.objects.all().order_by("-pk")
+
+    return render(request, 'post.html', {"posts":posts})
+
+@login_required(login_url='/login')
+def newbook(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user= request.user
+            post.save()
+            return redirect('post_book')
+
+    else:
+        form = PostForm()
+    return render(request, 'postnewbook.html' ,{'form': form})
 
 
 
