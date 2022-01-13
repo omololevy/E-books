@@ -12,8 +12,7 @@ urlpatterns = [
     path('post_book/',views.post_book, name='post_book'),
     path('library/',views.library, name='library'),
     path('post_newbook/',views.newbook, name='newbook'),
-
-
+    path('about/', views.service, name='about'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

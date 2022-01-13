@@ -59,18 +59,18 @@ def profile(request):
 
 @login_required(login_url='/login')
 def search_results(request):
-    if 'businesses' in request.GET and request.GET["businesses"]:
-        search_term = request.GET.get('businesses')
-        # searched_businesses = Business.search_by_name(search_term)
+    if 'title' in request.GET and request.GET["title"]:
+        search_term = request.GET.get('title')
+        searched_book = Book.search_by_title(search_term)
         message = f'{search_term}'
 
         context = {
             "message": message,
-            # "businesses": searched_businesses,
+            "searched_book": searched_book,
         }
         return render(request, 'search.html', context)
     else:
-        message = "Search for a business by its name"
+        message = "Search for a book by its title"
         return render(request, 'search.html', {"message": message})
 
 @login_required(login_url='/login')
@@ -101,6 +101,16 @@ def library(request):
     books = Book.objects.all().order_by("-pk")
 
     return render(request, 'library.html', {"books":books})
+
+@login_required(login_url='/login')  
+def service(request):
+    title = "service"
+    user = Profile.objects.get(user=request.user.id)
+    context = {
+        "title": title,
+    }
+    return render(request, 'about.html', context)
+
 
 
 

@@ -32,3 +32,7 @@ class Book(models.Model):
     def __str__(self):
         return self.author
 
+    @classmethod
+    def search_by_title(cls, search_term):
+        return  cls.objects.filter(title__icontains=search_term)
+        
