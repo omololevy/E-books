@@ -15,8 +15,6 @@
         height: 55vh;
     }
 
-
-
     section.pricing {
         background: #93979b;
         background: linear-gradient(to right, #abadaf, #2b2d2f);
@@ -89,11 +87,13 @@
         margin: 0%;
         margin-top: 0%;
     }
-    
+    .lib {
+        padding-top: 15rem;
+    }
 </style>
 
 <div class="container-fluid  landing">
-    <h1 class="text-center"><b>E-library</b></h1>
+    <h1 class="text-center lib" style="color: rgb(25, 161, 196);"><b>E-library</b></h1>
     <hr>
 </div>
 
@@ -128,7 +128,9 @@
                             <li class="text-muted"><span class="fa-li"><i class="fas fa-times"></i></span>Monthly Status
                                 Reports</li>
                         </ul>
+                        
                     </div>
+                    <a class="btn btn-outline-primary" href="{% url 'subscription' %}">&nbsp;Subscribe</a>
                 </div>
             </div>
             <!-- Plus Tier -->
@@ -150,6 +152,7 @@
                                 Reports</li>
                         </ul>
                     </div>
+                    <a class="btn btn-outline-primary" href="{% url 'subscription' %}">&nbsp;Subscribe</a>
                 </div>
             </div>
             <!-- Pro Tier -->
@@ -172,6 +175,7 @@
                             <li><span class="fa-li"><i class="fas fa-check"></i></span>Monthly Status Reports</li>
                         </ul>
                     </div>
+                    <a class="btn btn-outline-primary" href="{% url 'subscription' %}">&nbsp;Subscribe</a>
                 </div>
             </div>
         </div>
