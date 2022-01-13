@@ -30,4 +30,4 @@ class ProfileUpdateForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ["author", "description", "cover", "subject", "title"]
+        fields = ["author", "description","image_link", "subject", "title"]

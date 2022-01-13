@@ -24,6 +24,7 @@ class Book(models.Model):
     author = models.CharField(max_length=50, blank=True)
     description = models.CharField(max_length=100, blank=True)
     cover = CloudinaryField('image')
+    image_link = models.URLField(max_length=1000, null=False, blank=False, default="https://cloudfront.penguin.co.in/wp-content/uploads/2022/01/9780143454441.jpg")
     subject = models.CharField(max_length=50, blank=True)
     title = models.CharField(max_length=50, blank=True)
     tags = models.ManyToManyField(Tag, null=True, blank=True)

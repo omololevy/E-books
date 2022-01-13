@@ -1,50 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="col-md-2"></div><br><br>
-<a class="btn btn-outline-info btn-sm" href="{% url 'newbook' %}">Post a book</a>
-<div class="card-columns">
-    {% for cover in posts %}
-    <div class="card">
-        <!-- Image trigger modal -->
-        <img src="{{cover.cover.url}}" height="300vh" class="card-img-top img-responsive" data-toggle="modal"
-            data-target="#im{{cover.id}}" alt="{{cover.author}}">
-        <h4>Title: ~{{cover.title}}</h4>
+<div class="container">
+    <div class="col-md-2"></div><br><br>
+    <a class="btn btn-outline-info btn-sm" href="{% url 'newbook' %}"><i class="fa fa-upload"
+            aria-hidden="true"></i>&nbsp;Post a book</a>
+    <div class="card-columns">
+        {% for book in posts %}
+        <div class="card">
+            <!-- Image trigger modal -->
+            <img src="{{book.image_link}}" height="430vh" class="card-img-top img-responsive" data-toggle="modal"
+                data-target="#im{{book.id}}" alt="{{book.author}}">
+            <h4>Title: ~<strong>{{book.title}}</strong></h4>
 
-        <!-- Modal -->
-        <div class="modal fade" id="im{{cover.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center" id="exampleModalLabel">{{cover.author}}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    
+            <!-- Modal -->
+            <div class="modal fade" id="im{{book.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-center" id="exampleModalLabel">Author:~
+                                <strong>{{book.author}}~</strong></h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
 
+                        <div class="modal-body">
+                            <img src="{{book.image_link}}" style=" max-height: 70vh;" class="card-img-top"
+                                alt="{{book.author}}">
 
-                    <div class="modal-body">
-                        <img src="{{cover.cover.url}}" style=" max-height: 45vh;"class="card-img-top" alt="{{cover.author}}">
+                            <h5>{{book.description}}</h5>
+                            <p class="">
+                                Category: ~<strong>{{book.subject}}</strong>~</p>
+                            <p><br>Title: ~<strong>{{book.title}}</strong></p>
+                        </div>
+                        <div class="modal-footer">
 
-                        <h5>{{cover.description}}</h5>
-                        <p class="text-muted">
-                            Category: ~{{cover.subject}}~</p>
-                        <p><br>Title: ~{{cover.title}}</p>
-                    </div>
-                    <div class="modal-footer">
-                        <!-- <input class="form-control input-lg" type="text" value="{{image.image.url}}"
-                            id="{{image.id}}.url">
-                        <button class="btn btn-success" onclick="copyLink('{{image.id}}.url')">link</button> -->
-                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-outline-info" data-dismiss="modal">Content</button>
+                            <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Close</button>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
+
     </div>
-    {% endfor %}
-
 </div>
-
 {% endblock %}
