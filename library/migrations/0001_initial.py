@@ -16,6 +16,17 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='SubscriptionRecipients',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(max_length=30)),
+                ('email', models.EmailField(max_length=254)),
+                ('your_address', models.CharField(max_length=30)),
+                ('phone', models.CharField(max_length=30)),
+                ('age', models.CharField(max_length=30)),
+            ],
+        ),
+        migrations.CreateModel(
             name='Tag',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
