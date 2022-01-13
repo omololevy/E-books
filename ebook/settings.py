@@ -1,7 +1,7 @@
 import os
 
 
-import django_heroku
+import django_on_heroku
 from pathlib import Path
 from decouple import config
 import dj_database_url
@@ -142,17 +142,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-cloudinary.config(
-    cloud_name = 'chelangat',
-    api_key = '838883598586798',
-    api_secret = 'lDATFEFSkLWnfFCwgehhoaNpFt8',
+cloudinary.config( 
+  cloud_name = "dim8pysls", 
+  api_key = "111589689929649", 
+  api_secret = "fICQAMAqo4kM-6a84vTPlUXtmtc",
 )
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'chelangat',
-    'API_KEY': '838883598586798',
-    'API_SECRET': 'lDATFEFSkLWnfFCwgehhoaNpFt8'
-}
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -162,5 +156,5 @@ LOGIN_REDIRECT_URL = "/create_profile/"
 LOGOUT_REDIRECT_URL = "/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-django_heroku.settings(locals())
+django_on_heroku.settings(locals())
 

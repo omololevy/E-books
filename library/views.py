@@ -8,9 +8,13 @@ from django.contrib.auth.decorators import login_required
 def index(request):
     title = "Neighbourhood"
     user = Profile.objects.get(user=request.user.id)
+    posts = Book.objects.all().order_by("-pk")
     context = {
         "title": title,
+        "post": posts
     }
+    
+
     return render(request, 'index.html', context)
 
 
@@ -89,6 +93,14 @@ def newbook(request):
     else:
         form = PostForm()
     return render(request, 'postnewbook.html' ,{'form': form})
+
+
+@login_required(login_url='/login')
+def library(request):
+
+    books = Book.objects.all().order_by("-pk")
+
+    return render(request, 'library.html', {"books":books})
 
 
 

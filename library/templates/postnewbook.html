@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% load crispy_forms_tags %}
 {% block content %}
 
@@ -10,6 +11,7 @@
             <hr>
             <form action="" method="post" class="form-group container">
                 {% csrf_token %}
+                {{form.media}}
                 {{form|crispy}}
                 <button type="submit" class="btn btn-primary btn-block">Post</button>
 

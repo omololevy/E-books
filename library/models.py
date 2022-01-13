@@ -21,11 +21,12 @@ class Tag(models.Model):
         return self.name
 
 class Book(models.Model):
+    title = models.CharField(max_length=50, blank=True)
     author = models.CharField(max_length=50, blank=True)
     description = models.CharField(max_length=100, blank=True)
     cover = CloudinaryField('image',blank=True)
+    image_link = models.URLField(max_length=1000, null=False, blank=False, default="https://cloudfront.penguin.co.in/wp-content/uploads/2022/01/9780143454441.jpg")
     subject = models.CharField(max_length=50, blank=True)
-    title = models.CharField(max_length=50, blank=True)
     tags = models.ManyToManyField(Tag, null=True, blank=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='post',null=True)
 
