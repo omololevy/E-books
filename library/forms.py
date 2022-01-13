@@ -35,4 +35,9 @@ class SubscribeForm(forms.ModelForm):
 class PostForm(forms.ModelForm):
     class Meta:
         model = Book
-        fields = ["author", "description", "cover", "subject", "title"]
+        fields = ["author", "description", "image", "subject", "title"]
+
+class PostBookForm(forms.ModelForm):
+    class Meta:
+        model = Book
+        fields = ['author','description','image','subject', 'title', 'tags', 'user']

@@ -142,16 +142,16 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-cloudinary.config(
-    cloud_name = 'chelangat',
-    api_key = '838883598586798',
-    api_secret = 'lDATFEFSkLWnfFCwgehhoaNpFt8',
+cloudinary.config( 
+  cloud_name = "anipherchelsea", 
+  api_key = "864223959977843", 
+  api_secret = "2KxfzrDY68IxWoWL9v78Sn9lZzk",
+  
 )
-
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'chelangat',
-    'API_KEY': '838883598586798',
-    'API_SECRET': 'lDATFEFSkLWnfFCwgehhoaNpFt8'
+    'CLOUD_NAME': 'anipherchelsea',
+    'API_KEY': '864223959977843',
+    'API_SECRET': '2KxfzrDY68IxWoWL9v78Sn9lZzk'
 }
 
 # Default primary key field type

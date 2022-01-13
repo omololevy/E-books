@@ -3,6 +3,7 @@ from .forms import *
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse, Http404,HttpResponseRedirect
 from .email import send_welcome_email
+from django.contrib import messages
 
 
 # Create your views here.
@@ -90,12 +91,8 @@ def search_results(request):
         message = "Search for a business by its name"
         return render(request, 'search.html', {"message": message})
 
-@login_required(login_url='/login')
-def post_book(request):
 
-    posts = Book.objects.all().order_by("-pk")
 
-    return render(request, 'post.html', {"posts":posts})
 
 @login_required(login_url='/login')
 def newbook(request):
@@ -110,6 +107,25 @@ def newbook(request):
     else:
         form = PostForm()
     return render(request, 'postnewbook.html' ,{'form': form})
+
+@login_required
+def post_book(request):
+    if request.method == 'POST':
+        print(request.POST)
+        form = PostBookForm(request.POST,request.FILES)
+        if form.is_valid():
+            addBook = form.save(commit=False)
+            addBook.save()
+            
+            messages.success(request,'Your book has been posted successfully')
+            return redirect('post_book')
+
+    else:
+        form = PostBookForm()
+    context = {'form':form,}
+    return render(request,'postnewbook.html',context)
+
+
 
 
 
