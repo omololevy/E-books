@@ -4,7 +4,7 @@
   }
 </style>
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark" style="background-color:dimgrey">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: grey">
   <a class="navbar-brand" href="/">
     <i class="fas fa-home" style="font-size:30px;"></i>
   </a>
@@ -38,7 +38,9 @@
         {%if user.is_authenticated%}
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
-          <i class="fas fa-user" style="font-size:18px;"><b> {{user.username|capfirst}}</b></i>
+          <img class="rounded-circle " style="width: 40px; height: 40px" src="{{user.profile.image.url}}" width="160px" height="160px"
+          class="img-responsive" alt="profile">
+        <b>{{user.username|capfirst}}</b>
         </a>
         <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
           <a class="dropdown-item" href="{%url 'profile'%}">Profile</a>

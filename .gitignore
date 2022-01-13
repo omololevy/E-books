@@ -105,6 +105,7 @@ ENV/
 env.bak/ 
 venv.bak/ 
 virtual/
+staticfiles/
 
 
 # mkdocs documentation 

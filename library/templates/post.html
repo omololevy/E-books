@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container">
+<style>
+    .postedbooks {
+        margin-top: 5%;
+    }
+</style>
+<div class="container postedbooks">
     <div class="col-md-2"></div><br><br>
     <a class="btn btn-outline-info btn-sm" href="{% url 'newbook' %}"><i class="fa fa-upload"
             aria-hidden="true"></i>&nbsp;Post a book</a>

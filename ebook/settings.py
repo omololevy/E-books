@@ -142,11 +142,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-cloudinary.config( 
-  cloud_name = "dim8pysls", 
-  api_key = "111589689929649", 
-  api_secret = "fICQAMAqo4kM-6a84vTPlUXtmtc",
+cloudinary.config(
+    cloud_name = 'chelangat',
+    api_key = '838883598586798',
+    api_secret = 'lDATFEFSkLWnfFCwgehhoaNpFt8'
 )
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

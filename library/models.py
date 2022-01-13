@@ -7,7 +7,7 @@ from cloudinary.models import CloudinaryField
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = CloudinaryField('image',blank=True)
+    image = CloudinaryField('image',blank=True,default="https://image.cnbcfm.com/api/v1/image/105897632-1557241558937avatar-e1541360922907.jpg?v=1557241670&w=1600&h=900")
     bio = models.CharField(max_length=255, blank=True)
     join_date = models.DateTimeField(auto_now_add=True)
 
