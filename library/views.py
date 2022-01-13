@@ -70,6 +70,14 @@ def search_results(request):
         return render(request, 'search.html', {"message": message})
 
 
+def service(request):
+    title = "service"
+    user = Profile.objects.get(user=request.user.id)
+    context = {
+        "title": title,
+    }
+    return render(request, 'about.html', context)
+
 
 
 
