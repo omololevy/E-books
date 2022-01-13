@@ -4,7 +4,29 @@
 {{block.super}}
 
 <style>
+    .performance {
+        padding: 2px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 10px;
+    }
+    /* Split the screen in half */
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
 
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  padding: 25px;  
+}
+.right {
+  right: 0;
+  padding: 25px;
+}
 </style>
 
 <!DOCTYPE html>
@@ -13,26 +35,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script><title>Document</title>
 </head>
 <body>
     <div class="performance">
         <h2>OUR PROCESS OF HIGH SKILLS</h2>
         <h6>the right people for your quest</h6>
     </div>
-    <div class="">
-        <div class="skills col-md-6">
+    <div id="container">
+        <div class="split left">
             <h3>WE HAVE SKILLS TO SHOW YOU</h3>
 
-            <h6>CUSTOMER SERVICE</h6>
+            <div class="container">
+                <p>CUSTOMERS FAVORITE</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:77%">
+                    <span class="sr-only">77% Complete</span>
+                  </div>
+                </div>
+            </div>
 
-            <h6>BEST SELLING AUTHORS</h6>
+            <div class="container">
+                <p>POPULAR AUTHORS</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="100" style="width:93%">
+                    <span class="sr-only">93% Complete</span>
+                  </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <p>BEST SELLING AUTHORS</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width:87%">
+                    <span class="sr-only">87% Complete</span>
+                  </div>
+                </div>
+            </div>
 
-            <h6>BEST SELLING SERIES</h6>
-
-            <h6>BARGAIN BOOKS</h6>
+            <div class="container">
+                <p>BARGAINED BOOKS</p>
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width:85%">
+                    <span class="sr-only">85% Complete</span>
+                  </div>
+                </div>
+            </div>
+            
         </div>
-        <div class="buying col-md-6">
+        <div class="split right">
             <h2>BUYING BOOKS</h2>
             <h2>A DIFFFERENT KNOWELDGE</h2>
             <p>
@@ -41,8 +94,8 @@
                 humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, 
                 fiant sollemnes in futurum.
             <br>
-            London Address <br>
-            34 Parer Place via Musk Avenue Kelvin Grove, QLD, 4059
+            <h6><strong>London Address</strong></h6>
+            34 Moi Avenue Avenue Kelvin Grove, QLD, 4059
             </p>
 
         </div>
