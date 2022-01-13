@@ -102,8 +102,12 @@ def library(request):
 
     return render(request, 'library.html', {"books":books})
 
+@login_required(login_url='/login')
+def book_content(request,content):
 
+    content = Book.objects.get(content=content)
 
+    return render(request, 'content.html', {"content":content})
 
 
 

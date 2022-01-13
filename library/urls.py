@@ -12,6 +12,7 @@ urlpatterns = [
     path('post_book/',views.post_book, name='post_book'),
     path('library/',views.library, name='library'),
     path('post_newbook/',views.newbook, name='newbook'),
+    # path('content/<content:content>/', views.book_content, name="content"),
 
 
 ]
