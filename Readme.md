@@ -7,7 +7,7 @@
 3. Joan Kirui
 4. Rodger Kamau
 5. Chelsea Ayoo
-6. Ian Wanarua
+6. Ian Wanjira
 
 # Description
 Libraries closing hours, the distance and High costs of books among others are serious limitations to learning. Adopting an online Library application will make books of most categories, if not all, available to everyone. 
