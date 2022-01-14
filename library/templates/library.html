@@ -37,6 +37,16 @@ Book stuff
         vertical-align: top;
         transition: height 1s;
     }
+    .library {
+        background-image: url(/static/images/woodbg.jpg);
+        width: 100%;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 0%;
+        margin-top: 0%;
+    }
+
 
     /* star button */
     .book:after {
@@ -53,6 +63,7 @@ Book stuff
         border: 2px solid gray;
         height: 80%;
         overflow: hidden;
+        
     }
 
     .cover img {
@@ -66,6 +77,8 @@ Book stuff
 
     .book .author {
         font-size: 15px;
+        background-color: cornsilk;
+
     }
 
     @media (max-width: 941px) {
@@ -139,7 +152,7 @@ zoom on click
 
 
 
-<div id="large-th">
+<div id="large-th" class="library">
     <div class="container">
         <h1> Library</h1>
         <br>
@@ -152,7 +165,7 @@ zoom on click
 
         {% for book in books %}
 
-            <div class="book read">
+            <div class="book read" style="background-color: cornsilk;">
                 <div class="cover">
                    <a href="/static/Engineering/bookcontent.html"> <img src="{{book.image_link}}" data-target="#im{{book.id}}" alt="{{book.author}}"></a>
                 </div>
