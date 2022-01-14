@@ -133,7 +133,9 @@ def service(request):
 
 
 
+    content = Book.objects.get(content=content)
 
+    return render(request, 'content.html', {"content":content})
 
 
 
