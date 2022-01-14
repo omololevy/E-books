@@ -1,7 +1,7 @@
 import os
 
 
-import django_on_heroku
+import django_heroku
 from pathlib import Path
 from decouple import config
 import dj_database_url
@@ -142,11 +142,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-cloudinary.config( 
-  cloud_name = "dim8pysls", 
-  api_key = "111589689929649", 
-  api_secret = "fICQAMAqo4kM-6a84vTPlUXtmtc",
+cloudinary.config(
+    cloud_name = 'chelangat',
+    api_key = '838883598586798',
+    api_secret = 'lDATFEFSkLWnfFCwgehhoaNpFt8'
 )
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -156,5 +157,12 @@ LOGIN_REDIRECT_URL = "/create_profile/"
 LOGOUT_REDIRECT_URL = "/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-django_on_heroku.settings(locals())
+django_heroku.settings(locals())
+
+# Email configurations remember to install python-decouple
+EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT')
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 

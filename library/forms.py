@@ -27,6 +27,11 @@ class ProfileUpdateForm(forms.ModelForm):
         model = Profile
         fields = ["image", "bio"]
 
+class SubscribeForm(forms.ModelForm):
+    class Meta:
+        model = SubscriptionRecipients
+        fields = ["name", "email", "your_address", "phone", "age"]
+
 class PostForm(forms.ModelForm):
     class Meta:
         model = Book

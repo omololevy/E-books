@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<div class="container">
+<style>
+    .postedbooks {
+        margin-top: 5%;
+    }
+</style>
+<div class="container postedbooks">
     <div class="col-md-2"></div><br><br>
     <a class="btn btn-outline-info btn-sm" href="{% url 'newbook' %}"><i class="fa fa-upload"
             aria-hidden="true"></i>&nbsp;Post a book</a>
@@ -11,7 +16,7 @@
             <!-- Image trigger modal -->
             <img src="{{book.image_link}}" height="430vh" class="card-img-top img-responsive" data-toggle="modal"
                 data-target="#im{{book.id}}" alt="{{book.author}}">
-            <h4>Title: ~<strong>{{book.title}}</strong></h4>
+            <h4><strong>{{book.title}}</strong></h4>
 
             <!-- Modal -->
             <div class="modal fade" id="im{{book.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

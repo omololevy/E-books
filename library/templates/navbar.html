@@ -1,10 +1,10 @@
 <style>
   form {
-    margin-left: 380%;
+    margin-left: 250%;
   }
 </style>
 <!--Navbar -->
-<nav class="mb-1 navbar navbar-expand-lg navbar-dark" style="background-color:dimgrey">
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: grey">
   <a class="navbar-brand" href="/">
     <i class="fas fa-home" style="font-size:30px;"></i>
   </a>
@@ -15,10 +15,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'post_book' %}"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;Books</a>
+        <a class="nav-link mt-2" href="{% url 'post_book' %}"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;Books</a>
       </li>
       <li>
         <a class="nav-link" href="{% url 'library' %}"><img src="https://img.icons8.com/fluency/40/000000/books.png"/>Library</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}"><img  src="https://img.icons8.com/color/40/000000/about.png"/>About</a>
       </li>
       <li class="nav-item dropdown ">
         <form class="form-inline navbar-form " role="search" action="{%url 'search'%}">
@@ -38,13 +41,10 @@
         {%if user.is_authenticated%}
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
-          <b> {{ user.profile.prof_pic.url }}{{user.username|capfirst}}</b></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-          <a class="dropdown-item" href="{%url 'profile'%}">Profile</a>
-          <a class="dropdown-item" href="/admin">Admin</a>
+          class="img-responsive" alt="profile">
           <a class="dropdown-item" href="/password_change/">Change password</a>
           <a class="dropdown-item" href="/logout/">Logout</a>
+          <a class="dropdown-item" href="/subscribe/">Subscribe</a>
         </div>
         {% endif %}
       </li>
