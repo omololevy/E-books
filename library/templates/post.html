@@ -8,8 +8,10 @@
 </style>
 <div class="container postedbooks">
     <div class="col-md-2"></div><br><br>
+    {% if request.user.is_staff %}
     <a class="btn btn-outline-info btn-sm" href="{% url 'newbook' %}"><i class="fa fa-upload"
             aria-hidden="true"></i>&nbsp;Post a book</a>
+    {% endif %}
     <div class="card-columns">
         {% for book in posts %}
         <div class="card">
